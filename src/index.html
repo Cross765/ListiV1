@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listi - Sistema de Organización</title>
+  <link rel="stylesheet" href="./estilos/styles.css">
+</head>
+<body>
+  <main class="container">
+    
+    <div class="header">
+      <h1>BIENVENIDO A LISTI</h1>
+      <div class="container-logo"> <img class="logo" src="./img/logo.png" alt=""></div>
+    </div>
+
+    <div id="login-view" class="view">
+      <div class="divider-top">Iniciar Sesión</div>
+      
+      <form id="login-form">
+        <div class="form-group">
+          <label for="login-username">Usuario</label>
+          <input type="text" id="login-username" required>
+        </div>
+        <div class="form-group">
+          <label for="login-password">Contraseña (opcional)</label>
+          <input type="password" id="login-password">
+        </div>
+        <button type="submit">Iniciar Sesión</button>
+      </form>
+      
+      <p class="switch-view">¿No tienes cuenta? <a href="#" id="show-register">Regístrate</a></p>
+      <p id="login-message" class="message"></p>
+    </div>
+
+    <div id="register-view" class="view hidden">
+      <div class="divider-top">Crear Cuenta</div>
+      
+      <form id="register-form">
+        <div class="form-group">
+          <label for="register-username">Usuario</label>
+          <input type="text" id="register-username" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="register-password">Contraseña (opcional)</label>
+          <input type="password" id="register-password">
+        </div>
+        
+        <div class="form-group">
+          <label for="user-type">Tipo de Usuario</label>
+          <select id="user-type" required>
+            <option value="profesor">Profesor</option>
+            <option value="alumno">Alumno</option>
+            <option value="oficinista">Oficinista</option>
+            <option value="administrativo">Administrativo</option>
+            <option value="otro">Otro</option>
+          </select>
+        </div>
+        
+        <button type="submit">Registrarse</button>
+      </form>
+
+      <p class="switch-view">¿Ya tienes cuenta? <a href="#" id="show-login">Inicia Sesión</a></p>
+      <p id="register-message" class="message"></p>
+    </div>
+
+    <div class="divider-top">Sobre la App</div>
+
+    <div class="social">
+      <div class="social-btn"></div>
+      <div class="social-btn"></div>
+      <div class="social-btn"></div>
+    </div>
+
+    <div id="dashboard-view" class="view hidden">
+      <h2>Bienvenido, <span id="dashboard-username"></span></h2>
+      <p>Tipo de usuario: <span id="dashboard-usertype"></span></p>
+      <div class="dashboard-content">
+        <div id="profesor-panel" class="user-panel hidden">
+          <h3>Panel de Profesor</h3>
+          <p>Aquí podrás gestionar tus clases, tareas y estudiantes.</p>
+        </div>
+        <div id="alumno-panel" class="user-panel hidden">
+          <h3>Panel de Alumno</h3>
+          <p>Aquí podrás ver tus tareas, calificaciones y horario.</p>
+        </div>
+        <div id="oficinista-panel" class="user-panel hidden">
+          <h3>Panel de Oficinista</h3>
+          <p>Aquí podrás gestionar documentación y tareas de oficina.</p>
+        </div>
+        <div id="administrativo-panel" class="user-panel hidden">
+          <h3>Panel Administrativo</h3>
+          <p>Aquí podrás gestionar empleados y recursos.</p>
+        </div>
+        <div id="otro-panel" class="user-panel hidden">
+          <h3>Panel de Usuario</h3>
+          <p>Bienvenido al sistema de organización.</p>
+        </div>
+      </div>
+      <button id="logout-btn" class="secondary-btn">Cerrar Sesión</button>
+    </div>
+  </main>
+
+  <script src="./js/renderer.js"></script>
+</body>
+</html>
